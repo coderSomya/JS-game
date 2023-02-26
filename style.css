@@ -1,0 +1,35 @@
+.container{
+    width: 90vw;
+    height: 80vh;
+    border: 2px solid black;
+    position: relative;
+    margin: auto;
+}
+
+.left{
+    position: absolute;
+    transform: translateY(50%);
+    height: 50%;
+    width: 10px;
+    background-color: black;
+}
+
+.right{
+    right: 0;
+    position: absolute;
+    transform: translateY(50%);
+    height: 50%;
+    width: 10px;
+    background-color: black;
+}
+
+.ball{
+    width: 30px;
+    aspect-ratio: 1;
+    background-color: red;
+    border: 2px solid rgb(171, 89, 89);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
