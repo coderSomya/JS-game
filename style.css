@@ -8,7 +8,7 @@
 
 .left{
     position: absolute;
-    transform: translateY(50%);
+  top: 20%;
     height: 50%;
     width: 10px;
     background-color: black;
@@ -17,7 +17,7 @@
 .right{
     right: 0;
     position: absolute;
-    transform: translateY(50%);
+   top: 30%;
     height: 50%;
     width: 10px;
     background-color: black;
