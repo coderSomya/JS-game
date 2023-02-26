@@ -6,30 +6,36 @@
     margin: auto;
 }
 
-.left{
+.bar{ 
+
+    --position: 20;
+
     position: absolute;
-  top: 20%;
+  top: calc(var(--position)*1vh);
     height: 50%;
     width: 10px;
     background-color: black;
 }
 
-.right{
+#left{
+    left: 0;
+}
+
+#right{
     right: 0;
-    position: absolute;
-   top: 30%;
-    height: 50%;
-    width: 10px;
-    background-color: black;
 }
 
-.ball{
+#ball{
+    
+    --x: 50;
+    --y: 50;
+
     width: 30px;
     aspect-ratio: 1;
     background-color: red;
     border: 2px solid rgb(171, 89, 89);
     border-radius: 50%;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: calc(var(--x)*1%);
+    top: calc(var(--y)*1%);
 }
