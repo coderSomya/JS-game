@@ -1,4 +1,6 @@
-const U = 0.025
+const INITIAL_VELOCITY = 0.025
+const ACCELERATION = 1.005
+const MAX_VELOCITY= 0.2
 
 export default class Ball{
     constructor(ball){
@@ -22,6 +24,10 @@ export default class Ball{
         this.ball.style.setProperty("--y", value)
     }
 
+    rect(){
+        return this.ball.getBoundingClientRect();
+    }
+
     reset(){
         this.x=50; this.y=50;
 
@@ -38,14 +44,26 @@ export default class Ball{
         }
         console.log(this.direction)
 
-        this.velocity = U 
+        this.velocity = INITIAL_VELOCITY
     }
 
     update(delta){
       this.x+= this.direction.x*this.velocity *delta;
       this.y+= this.direction.y*this.velocity*delta;
-    }
 
+
+    this.velocity= Math.min(this.velocity*ACCELERATION, MAX_VELOCITY)
+
+      const rect= this.rect();
+    //   console.log(rect.bottom);
+      if(rect.bottom > 0.975*window.innerHeight || rect.top< 0.025) this.direction.y*= -1;
+
+      if(rect.right > 0.975*window.innerWidth || rect.left < 0.025 ){
+        this.direction.x*= -1;
+      }
+
+
+    }
 
 }
 
